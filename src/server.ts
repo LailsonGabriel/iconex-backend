@@ -1,13 +1,13 @@
-import express from "express";
+import express, { json } from "express";
+import { db } from "./database/db";
 
 const app = express();
 
 const PORT = 8000;
 
-app.get("/", (req, res) => {
-  res.send("Express + TypeScript");
-});
+app.use(json());
 
-app.listen(PORT, () => {
+app.listen(PORT, async () => {
+  await db.sync();
   console.log(`Server is running at http://localhost:${PORT}`);
 });
