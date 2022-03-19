@@ -1,10 +1,10 @@
 import { Company } from "../../interfaces/UserAndCompany";
 import { CompanyModel } from "../models/CompanyModel";
 
-const getAllCompanies = async (): Promise<Company[]> => {
-  const companies = await CompanyModel.findAll();
+const getCompanyById = async (id: string): Promise<Company> => {
+  const companies = await CompanyModel.findOne({ where: { id } });
 
-  return companies as unknown as Company[];
+  return companies as unknown as Company;
 };
 
 const createCompany = async (body: Company): Promise<Company> => {
@@ -19,4 +19,8 @@ const updateCompany = async (body: Company, id: string): Promise<Company> => {
   return company as unknown as Company;
 };
 
-export { getAllCompanies, createCompany, updateCompany };
+const deleteCompany = async (id: string): Promise<void> => {
+  await CompanyModel.destroy({ where: { id } });
+};
+
+export { createCompany, updateCompany, getCompanyById, deleteCompany };
