@@ -26,7 +26,7 @@ const loginCompanyMiddleware = async (
 ) => {
   const { email, password } = req.body;
 
-  const company = await getUserByEmail(email);
+  const company = await getCompanyByEmail(email);
   if (
     company.some(
       (cmp: User) => cmp.email === email && cmp.password === password,
