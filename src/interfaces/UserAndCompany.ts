@@ -1,4 +1,5 @@
 export interface UserAndCompany {
+  some: any;
   id?: number;
   name?: string;
   email?: string;
