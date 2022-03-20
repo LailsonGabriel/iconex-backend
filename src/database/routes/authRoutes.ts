@@ -8,3 +8,5 @@ import {
 
 router.post("/user/login", loginUserMiddleware, login);
 router.post("/company/login", loginCompanyMiddleware, login);
+
+export default router;

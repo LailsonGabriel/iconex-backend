@@ -8,6 +8,15 @@ const PORT = 8000;
 
 app.use(json());
 
+import authRoutes from "../src/database/routes/authRoutes";
+app.use("/auth", authRoutes);
+
+import userRoutes from "../src/database/routes/userRoutes";
+app.use("/user", userRoutes);
+
+import companyRoutes from "../src/database/routes/companyRoutes";
+app.use("/company", companyRoutes);
+
 app.use(errorMiddleware);
 
 app.listen(PORT, async () => {

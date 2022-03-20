@@ -1,4 +1,4 @@
-import { DataTypes } from "sequelize/types";
+import { DataTypes, Model } from "sequelize";
 import { db } from "../db";
 
 export const CompanyModel = db.define(

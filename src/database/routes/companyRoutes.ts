@@ -12,3 +12,5 @@ router.get("/:id", verifyToken, getCompanyById);
 router.post("/", createCompany);
 router.put("/:id", verifyToken, updateCompany);
 router.delete("/:id", verifyToken, deleteCompany);
+
+export default router;
